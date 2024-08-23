@@ -1,5 +1,11 @@
 namespace bingo
 {
+    /// <summary>
+    /// Represents a single cell in a Bingo card. It has the numeric value, and a bool
+    /// indicating if the cell has been selected or not.
+    /// 
+    /// As a Cell is selected, it notifies the covering CellGroups to see if the card is a winner.
+    /// </summary>
     public class Cell
     {
         public int Value { get; set; }
@@ -13,6 +19,9 @@ namespace bingo
 
         public void Set()
         {
+            if(Selected)
+                return;
+
             Selected = true;
             CoveringGroups.ForEach(group => group.Set());
         }
@@ -20,7 +29,7 @@ namespace bingo
         public void Reset()
         {
             Selected = false;
-            CoveringGroups.ForEach(group => group.Reset());
+            // CoveringGroups.ForEach(group => group.Reset());
         }
 
         public override string ToString()

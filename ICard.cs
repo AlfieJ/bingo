@@ -9,5 +9,7 @@ namespace bingo
 
         public void Reset();
         public bool SelectNumber(int number);
+
+        public (int, bool)? GetCell(int number);
     }
 }
