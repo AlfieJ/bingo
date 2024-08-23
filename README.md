@@ -16,7 +16,7 @@ The first way I did it was to just use a 5x5 array. I used a tuple of (int, bool
 
 This is all in the `Card` class.
 
-Turns out that, yet, horizontal typically wins about 3 times as much as vertical.
+> Turns out that, yes, horizontal typically wins about 3 times as much as vertical.
 
 ### Take 2
 I thought there might be a more efficient way to do it. There's a lot of looping to figure out which cell has the matching number, figuring out if a row, column, or diagonal has been fully selected, etc. The board has to be checked each time a cell is selected, so there's lots of looping.
